@@ -190,26 +190,6 @@
         </li>
       
         
-        <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
-            
-            关于
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
-            
-            标签
-          </a>
-        </li>
-      
-        
         <li class="menu-item menu-item-categories">
           <a href="/categories/" rel="section">
             
@@ -226,6 +206,16 @@
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
             归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
           </a>
         </li>
       
@@ -248,6 +238,148 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://yw411.github.io/2017/11/16/博客搭建/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="高艺伟">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="高艺伟的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/11/16/博客搭建/" itemprop="url">github+hexo博客搭建</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-16T20:41:58+08:00">
+                2017-11-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/搭建博客/" itemprop="url" rel="index">
+                    <span itemprop="name">搭建博客</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>一、所需工具<br>1、下载nodejs<br>2、下载git<br>二、安装<br>1、在github上创建repository：命名为username.github.io<br>2、安装hexo<br>    打开git命令端，进入某个目录<br>    1)npm install -g hexo-cli(这里可能出问题，墙的原因，可以试试这个<a href="http://npm.taobao.org/，即使用cnpm" target="_blank" rel="noopener">http://npm.taobao.org/，即使用cnpm</a>)<br>    2)hexo init blog<br>    3)cd blog<br>    4)(c)npm install<br>    5)hexo g<br>    6)hexo s(可以在本地打开localhost:4000查看网站)<br>3、hexo和github绑定<br>    1)安装插件(c)npm install hexo-deployer-git –save<br>    2)blog目录下有_config文件，打开进行修改：<br>        deploy:<br>          type: git<br>          repo: git@github.com:yourusername/yourusername.github.io.git<br>          branch: master<br>  3)hexo d<br>  致此，完成博客的搭建，可以通过username.github.io进行访问，当然也可以自己买域名修改域名<br>三、进一步完善<br>1、修改主题<br>    1)<a href="https://hexo.io/themes/这个网站有很多主题可供使用" target="_blank" rel="noopener">https://hexo.io/themes/这个网站有很多主题可供使用</a><br>    2)选择喜欢的主题进入github页面进行clone到本地 blog/themes文件夹下<br>    3)修个blog/_config配置文件，theme:(名称为下载的主题名)，可能有和主题相关的插件也需要下载<br>    4)hexo s –debug可以在本地进行预览，若可以则hexo g，hexo d到远程<br>2、配置主题<br>    有2个配置文件，blog下有一个配置文件，对应的主题下有一个配置文件<br>    1)blog下的配置文件可以设置blog的名称，描述等等<br>    2)对应主题下的配置文件可以设置关于主题的相关内容。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
     
       
 
@@ -427,14 +559,32 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
             
 
             
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
 
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
             
 
           </nav>
