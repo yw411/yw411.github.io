@@ -252,6 +252,309 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://yw411.github.io/2017/11/20/neo4j的cypher语言/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="高艺伟">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="高艺伟的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/11/20/neo4j的cypher语言/" itemprop="url">neo4j的cypher语言</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-20T21:07:33+08:00">
+                2017-11-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/图数据库/" itemprop="url" rel="index">
+                    <span itemprop="name">图数据库</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>neo4j是一个数据库，查询语言为cypher</p>
+<p>1、创建节点</p>
+<p>create（n:Label{key:value,key:value}）key为属性，value为属性取值，Label为节点的类型，如person</p>
+<p>2、创建带方向的关系</p>
+<p>match （a),(b)  where a=  and b=  create (a)-[r:type{key:value,key:value}]-&gt;(b) ,type为关系的类型，关系也有属性。</p>
+<p>3、查询节点</p>
+<p>match (a) where a.name=’mary’ and a.sex=’femal’</p>
+<p>4、有很多函数</p>
+<p>count  match (a) return count(a)  //返回所有节点数<br>min、max等等</p>
+<p>5、最短路径</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://yw411.github.io/2017/11/20/neo4j的java调用/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="高艺伟">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="高艺伟的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/11/20/neo4j的java调用/" itemprop="url">neo4j的java调用</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-20T20:57:05+08:00">
+                2017-11-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/图数据库/" itemprop="url" rel="index">
+                    <span itemprop="name">图数据库</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>有3种方式：</p>
+<ul>
+<li><p>内嵌式:使用数据库文件（需要zip文件中的lib文件下的所有库）</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">File f=<span class="keyword">new</span> File(<span class="string">"D:\\neo4j3\\db"</span>);</span><br><span class="line">GraphDatabaseFactory graphDbFactory = <span class="keyword">new</span> GraphDatabaseFactory();  </span><br><span class="line">GraphDatabaseService graphDb = graphDbFactory.newEmbeddedDatabase(f);</span><br><span class="line">Transaction tx=graphDb.beginTx();<span class="comment">//开启一个事务</span></span><br><span class="line">    <span class="keyword">try</span> &#123;   </span><br><span class="line">        String query=<span class="string">"match (n) return n AS node"</span>;</span><br><span class="line">        Result result=graphDb.execute(query);</span><br><span class="line">        Iterator n_column=result.columnAs(<span class="string">"node"</span>);</span><br><span class="line">        <span class="keyword">for</span> ( Node node : Iterators.asIterable( n_column ) ) </span><br><span class="line">        &#123;  <span class="comment">//对于数据库中的每一个节点       </span></span><br><span class="line">            <span class="keyword">int</span> userid=Integer.valueOf(node.getProperty(<span class="string">"userid"</span>).toString());<span class="comment">//该节点的userid</span></span><br><span class="line">        &#125;</span><br><span class="line">        tx.success()</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>内嵌式，通过jdbc连接</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Class.forName(<span class="string">"org.neo4j.jdbc.Driver"</span>);</span><br><span class="line">con = DriverManager.getConnection(<span class="string">"jdbc:neo4j:http://localhost:7474"</span>,<span class="string">"neo4j"</span>,<span class="string">"neo4jj"</span>);      </span><br><span class="line">st=con.createStatement();</span><br><span class="line">ResultSet res=st.executeQuery(cypher语言)</span><br><span class="line"><span class="keyword">while</span>(res.next())&#123;</span><br><span class="line">    res.getString(列名)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>服务器模式:这种模式过于复杂，不推荐使用。需要http get post response，参数的配置</p>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://yw411.github.io/2017/11/20/图数据库neo4j安装/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1176,7 +1479,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1198,7 +1501,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
