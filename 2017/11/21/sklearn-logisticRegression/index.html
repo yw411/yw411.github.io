@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="windows," />
+  <meta name="keywords" content="sklearn,机器学习," />
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="参考:http://blog.csdn.net/samlei/article/details/5494624 在中文Windows系统中，如果一个文本文件是UTF-8编码的，那么在CMD.exe命令行窗口（所谓的DOS窗口）中不能正确显示文件中的内容。在默认情况下，命令行窗口中使用的代码页是中文或者美国的，即编码是中文">
-<meta name="keywords" content="windows">
+<meta name="description" content="0、参考： http://blog.csdn.net/cherdw/article/details/54891073  http://blog.csdn.net/sun_shengyun/article/details/53811483 1、官方api http://scikit-learn.org/stable/mo">
+<meta name="keywords" content="sklearn,机器学习">
 <meta property="og:type" content="article">
-<meta property="og:title" content="非原创--dos切换代码页">
-<meta property="og:url" content="https://yw411.github.io/2017/11/20/dos切换代码页/index.html">
+<meta property="og:title" content="sklearn--logisticRegression">
+<meta property="og:url" content="https://yw411.github.io/2017/11/21/sklearn-logisticRegression/index.html">
 <meta property="og:site_name" content="高艺伟的博客">
-<meta property="og:description" content="参考:http://blog.csdn.net/samlei/article/details/5494624 在中文Windows系统中，如果一个文本文件是UTF-8编码的，那么在CMD.exe命令行窗口（所谓的DOS窗口）中不能正确显示文件中的内容。在默认情况下，命令行窗口中使用的代码页是中文或者美国的，即编码是中文字符集或者西文字符集。  如果想正确显示UTF-8字符，可以按照以下步骤操作：">
+<meta property="og:description" content="0、参考： http://blog.csdn.net/cherdw/article/details/54891073  http://blog.csdn.net/sun_shengyun/article/details/53811483 1、官方api http://scikit-learn.org/stable/modules/generated/sklearn.linear_model.Log">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-11-20T08:56:37.400Z">
+<meta property="og:updated_time" content="2017-11-21T02:53:28.009Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="非原创--dos切换代码页">
-<meta name="twitter:description" content="参考:http://blog.csdn.net/samlei/article/details/5494624 在中文Windows系统中，如果一个文本文件是UTF-8编码的，那么在CMD.exe命令行窗口（所谓的DOS窗口）中不能正确显示文件中的内容。在默认情况下，命令行窗口中使用的代码页是中文或者美国的，即编码是中文字符集或者西文字符集。  如果想正确显示UTF-8字符，可以按照以下步骤操作：">
+<meta name="twitter:title" content="sklearn--logisticRegression">
+<meta name="twitter:description" content="0、参考： http://blog.csdn.net/cherdw/article/details/54891073  http://blog.csdn.net/sun_shengyun/article/details/53811483 1、官方api http://scikit-learn.org/stable/modules/generated/sklearn.linear_model.Log">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="https://yw411.github.io/2017/11/20/dos切换代码页/"/>
+  <link rel="canonical" href="https://yw411.github.io/2017/11/21/sklearn-logisticRegression/"/>
 
 
 
 
 
-  <title>非原创--dos切换代码页 | 高艺伟的博客</title>
+  <title>sklearn--logisticRegression | 高艺伟的博客</title>
   
 
 
@@ -253,7 +253,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://yw411.github.io/2017/11/20/dos切换代码页/">
+    <link itemprop="mainEntityOfPage" href="https://yw411.github.io/2017/11/21/sklearn-logisticRegression/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="高艺伟">
@@ -270,7 +270,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">非原创--dos切换代码页</h1>
+          <h1 class="post-title" itemprop="name headline">sklearn--logisticRegression</h1>
         
 
         <div class="post-meta">
@@ -282,8 +282,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-20T16:36:48+08:00">
-                2017-11-20
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-21T10:24:03+08:00">
+                2017-11-21
               </time>
             
 
@@ -305,8 +305,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/windows系统/" itemprop="url" rel="index">
-                    <span itemprop="name">windows系统</span>
+                  <a href="/categories/sklearn/" itemprop="url" rel="index">
+                    <span itemprop="name">sklearn</span>
                   </a>
                 </span>
 
@@ -342,26 +342,33 @@
       
 
       
-        <p>参考:<a href="http://blog.csdn.net/samlei/article/details/5494624" target="_blank" rel="noopener">http://blog.csdn.net/samlei/article/details/5494624</a></p>
-<p>在中文Windows系统中，如果一个文本文件是UTF-8编码的，那么在CMD.exe命令行窗口（所谓的DOS窗口）中不能正确显示文件中的内容。在默认情况下，命令行窗口中使用的代码页是中文或者美国的，即编码是中文字符集或者西文字符集。 </p>
-<p>如果想正确显示UTF-8字符，可以按照以下步骤操作： </p>
-<ol>
-<li><p>打开CMD.exe命令行窗口 </p>
-</li>
-<li><p>通过 chcp命令改变代码页，UTF-8的代码页为65001,命令为chcp 65001，执行该操作后，代码页就被变成UTF-8了。但是，在窗口中仍旧不能正确显示UTF-8字符。 </p>
-</li>
-<li><p>修改窗口属性，改变字体：在命令行标题栏上点击右键，选择”属性”-&gt;”字体”，将字体修改为True Type字体”Lucida Console”，然后点击确定将属性应用到当前窗口。<br>这时使用type命令就可以显示UTF-8文本文件的内容了： type filename.txt </p>
-</li>
-<li><p>通过以上操作并不能完全解决问题，因为显示出来的内容有可能不完全。可以先最小化，然后最大化命令行窗口，文件的内容就完整的显示出来了。</p>
-</li>
-</ol>
-<p>其他代码页参考：</p>
+        <p>0、参考：</p>
+<p><a href="http://blog.csdn.net/cherdw/article/details/54891073" target="_blank" rel="noopener">http://blog.csdn.net/cherdw/article/details/54891073</a> </p>
+<p><a href="http://blog.csdn.net/sun_shengyun/article/details/53811483" target="_blank" rel="noopener">http://blog.csdn.net/sun_shengyun/article/details/53811483</a></p>
+<p>1、官方api</p>
+<p><a href="http://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html#sklearn.linear_model.LogisticRegression" target="_blank" rel="noopener">http://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html#sklearn.linear_model.LogisticRegression</a></p>
+<p>2、参数解析<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">LogisticRegression(penalty=&apos;l2’, dual=False, tol=0.0001, C=1.0, fit_intercept=True, intercept_scaling=1, class_weight=None, random_state=None, solver=’liblinear’, max_iter=100, multi_class=’ovr’, verbose=0, warm_start=False, n_jobs=1）</span><br></pre></td></tr></table></figure></p>
 <ul>
-<li><p>chcp 936      切换回简体中文，GBK编码</p>
+<li><p>penalty：正则化参数，L1或者L2，L2是参数平方和，L1是参数和。为了解决过拟合，一般使用L2，若还过拟合，则使用L1（应该是L1的纠正程度更厉害一些）</p>
 </li>
-<li><p>chcp 437     切换回英语，ISO8859编码</p>
+<li><p>C：正则化系数λ的倒数，默认是1</p>
+</li>
+<li><p>class_weight：dict or ‘balanced’, default: None。若为None，所有类的权重相同，若为balanced，则由系统自动计算每个类的权重，dict即自己指定每个类的权重，是一个字典的结构。</p>
+<p>在分类模型中，我们经常会遇到两类问题：</p>
+<p>第一种是误分类的代价很高。比如对合法用户和非法用户进行分类，将非法用户分类为合法用户的代价很高，我们宁愿将合法用户分类为非法用户，这时可以人工再甄别，但是却不愿将非法用户分类为合法用户。这时，我们可以适当提高非法用户的权重。</p>
+<p>第二种是样本是高度失衡的，比如我们有合法用户和非法用户的二元样本数据10000条，里面合法用户有9995条，非法用户只有5条，如果我们不考虑权重，则我们可以将所有的测试集都预测为合法用户，这样预测准确率理论上有99.95%，但是却没有任何意义。这时，我们可以选择balanced，让类库自动提高非法用户样本的权重。</p>
+</li>
+<li><p>solver：损失函数的优化方法{‘newton-cg’, ‘lbfgs’, ‘liblinear’, ‘sag’, ‘saga’},</p>
+<p>1）newton-cg:牛顿方法，利用损失函数二阶导数矩阵即海森矩阵来迭代优化损失函数。</p>
+<p>2）lbfgs：牛顿方法，利用损失函数二阶导数矩阵即海森矩阵来迭代优化损失函数。</p>
+<p>3）liblinear:使用了开源的liblinear库实现，内部使用了坐标轴下降法来迭代优化损失函数。</p>
+<p>4）sag：梯度下降法</p>
+<p>L1正则化是非连续的，而1、2、4都需要求导，所以只适用于L2，而liblinear适合于两者；<br>同时小数据时使用liblinear较好，大数据时使用sag较好。<br>多元逻辑回归包括一对多，多对多，liblinear只适用于一对多，但是多对多更精确一些。</p>
+</li>
+<li><p>multi_class：多分类，可以使用一对多（OvR）和多对多（MvM）</p>
 </li>
 </ul>
+<p>3、sklearn中进行交叉验证时，可以使用网格化来测试这些超参数，选择合适的超参数。</p>
 
       
     </div>
@@ -379,7 +386,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/windows/" rel="tag"># windows</a>
+            <a href="/tags/sklearn-机器学习/" rel="tag"># sklearn,机器学习</a>
           
         </div>
       
@@ -392,8 +399,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/11/20/摆弄路由器之感/" rel="next" title="摆弄路由器之感">
-                <i class="fa fa-chevron-left"></i> 摆弄路由器之感
+              <a href="/2017/11/20/python初学爬虫/" rel="next" title="python初学爬虫">
+                <i class="fa fa-chevron-left"></i> python初学爬虫
               </a>
             
           </div>
@@ -402,8 +409,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/11/20/图数据库neo4j安装/" rel="prev" title="图数据库neo4j安装">
-                图数据库neo4j安装 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/11/21/网格搜索与交叉验证/" rel="prev" title="sklearn--网格搜索与交叉验证">
+                sklearn--网格搜索与交叉验证 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>

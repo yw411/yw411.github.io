@@ -252,6 +252,670 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://yw411.github.io/2017/11/21/k近邻算法/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="高艺伟">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="高艺伟的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/11/21/k近邻算法/" itemprop="url">k近邻算法</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-21T11:39:03+08:00">
+                2017-11-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/机器学习算法/" itemprop="url" rel="index">
+                    <span itemprop="name">机器学习算法</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>1、主要思想：</p>
+<p>有一个给定的训练集（即含有标签），对于一个输入的待分类的数据，计算该数据与训练集中每个样本的距离，选择距离最近的前k个样本，这k个样本中哪个类别最多，待分类数据就属于哪个类别。</p>
+<p>2、特点：</p>
+<p>1）无参数</p>
+<p>2）监督学习</p>
+<p>3、需要考虑：</p>
+<p>1）k如何选择：</p>
+<p>通过多次尝试，否则会发生过拟合或欠拟合的问题。</p>
+<p>2）距离如何算：</p>
+<p>欧式距离、曼哈顿距离、切比雪夫距离、马氏距离等</p>
+<p>3）除了少数服从多数，还有其它方法吗?</p>
+<p>4）对于给定的标签数据训练集、测试集的比例</p>
+<p>5）查找前k个的算法：</p>
+<p>除了简单的线性查找，还有其它算法，如kd树，BBF算法，​</p>
+<p>4、缺点：</p>
+<p>1）如果训练集很大，占据空间</p>
+<p>2）如果特征维数多，占据时间​，产生维数灾难</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://yw411.github.io/2017/11/21/kaggle-泰坦尼克问题/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="高艺伟">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="高艺伟的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/11/21/kaggle-泰坦尼克问题/" itemprop="url">kaggle--泰坦尼克问题</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-21T11:23:24+08:00">
+                2017-11-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/kaggle/" itemprop="url" rel="index">
+                    <span itemprop="name">kaggle</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>1、特征分析 : </p>
+<p>分析各种因素之间的关系，因素与结果之间的关系，通过可视化观察</p>
+<p>pandas，seaborn，matplotlib</p>
+<p>2、特征工程：</p>
+<p>空值如何填充，非数值如何转换，如何归一化，选择哪些特征，哪些特征可以联合成为一个新的特征</p>
+<p>3、model模型：</p>
+<ul>
+<li><p>交叉验证，参数选择，</p>
+</li>
+<li><p>ensemble，xgboost，adaboost，bagging，randomforest，extratree，gradient</p>
+</li>
+</ul>
+<p>4、空值如何填充？</p>
+<p>均值？中位数？或使用其它的属性进行训练预测等。</p>
+<p>5、其他人的kernel很有用。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://yw411.github.io/2017/11/21/网格搜索与交叉验证/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="高艺伟">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="高艺伟的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/11/21/网格搜索与交叉验证/" itemprop="url">sklearn--网格搜索与交叉验证</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-21T10:54:26+08:00">
+                2017-11-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/sklearn/" itemprop="url" rel="index">
+                    <span itemprop="name">sklearn</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>0、参考：</p>
+<p><a href="http://blog.csdn.net/JasonDing1354/article/details/50562522" target="_blank" rel="noopener">http://blog.csdn.net/JasonDing1354/article/details/50562522</a></p>
+<p><a href="http://www.cnblogs.com/nolonely/p/7007961.html" target="_blank" rel="noopener">http://www.cnblogs.com/nolonely/p/7007961.html</a></p>
+<p>在参数中有一类是超参数，即不是通过训练得到的，而是由人工指定的，但是取哪个值需要不断的去尝试。</p>
+<p>1、交叉验证</p>
+<p>可以用来选择合适的超参数，对于每一个参数，进行n折交叉验证，得到n个结果然后进行平均，得到此超参数对应的结果。</p>
+<p>2、网格搜索交叉验证</p>
+<p>穷举所有可取的超参数，计算相应的结果。</p>
+<ul>
+<li><p><code>sklearn.model_selection.GridSearchCV(model,param,cv,scoring)</code></p>
+<ul>
+<li>model是定义的模型，如model=sklearn.svm.SVC()</li>
+<li>param是要穷举的超参数，如param={‘C’:[0.1,1,10],’kernel’:[‘rbf’,’poly’,’linear’]}</li>
+<li>cv是交叉验证的次数</li>
+<li>scoring是评估指标，如accuracy，也可以是自己定义的评价指标</li>
+</ul>
+</li>
+<li><p>有了train_x,train_y后</p>
+<p><code>grid=GridSearchCV()</code></p>
+<p><code>grid.fit(x,y)</code></p>
+</li>
+<li><p>grid中包括最后的结果</p>
+<ul>
+<li><p><code>grid.grid_scores_</code></p>
+</li>
+<li><p><code>grid.best_scores_    grid.best_params_    grid.best_estimator</code></p>
+</li>
+<li><p><code>print grid.grid_scores_[0].parameters</code></p>
+<p><code>print grid.grid_scores_[0].cv_validation_scores</code></p>
+<p><code>print grid.grid_scores_[0].mean_validation_score</code></p>
+</li>
+</ul>
+</li>
+</ul>
+<p>3、随机采样交叉验证</p>
+<p><code>RandomSearchCV(estimator, param_distributions, n_iter=10, scoring=None, fit_params=None, n_jobs=1, iid=True, refit=True, cv=None, verbose=0, pre_dispatch=&#39;2*n_jobs&#39;, random_state=None, error_score=&#39;raise&#39;, return_train_score=True)</code></p>
+<p>思想是不穷举所有的超参数，而是以一定的概率分布选择，速度更快</p>
+<p>1）estimator还是模型</p>
+<p>2）param_distributions是超参数</p>
+<p>3）n_iter指明多少个参数组合被计算</p>
+<p>4）cv指定交叉验证的次数</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://yw411.github.io/2017/11/21/sklearn-logisticRegression/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="高艺伟">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="高艺伟的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/11/21/sklearn-logisticRegression/" itemprop="url">sklearn--logisticRegression</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-21T10:24:03+08:00">
+                2017-11-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/sklearn/" itemprop="url" rel="index">
+                    <span itemprop="name">sklearn</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>0、参考：</p>
+<p><a href="http://blog.csdn.net/cherdw/article/details/54891073" target="_blank" rel="noopener">http://blog.csdn.net/cherdw/article/details/54891073</a> </p>
+<p><a href="http://blog.csdn.net/sun_shengyun/article/details/53811483" target="_blank" rel="noopener">http://blog.csdn.net/sun_shengyun/article/details/53811483</a></p>
+<p>1、官方api</p>
+<p><a href="http://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html#sklearn.linear_model.LogisticRegression" target="_blank" rel="noopener">http://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html#sklearn.linear_model.LogisticRegression</a></p>
+<p>2、参数解析<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">LogisticRegression(penalty=&apos;l2’, dual=False, tol=0.0001, C=1.0, fit_intercept=True, intercept_scaling=1, class_weight=None, random_state=None, solver=’liblinear’, max_iter=100, multi_class=’ovr’, verbose=0, warm_start=False, n_jobs=1）</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li><p>penalty：正则化参数，L1或者L2，L2是参数平方和，L1是参数和。为了解决过拟合，一般使用L2，若还过拟合，则使用L1（应该是L1的纠正程度更厉害一些）</p>
+</li>
+<li><p>C：正则化系数λ的倒数，默认是1</p>
+</li>
+<li><p>class_weight：dict or ‘balanced’, default: None。若为None，所有类的权重相同，若为balanced，则由系统自动计算每个类的权重，dict即自己指定每个类的权重，是一个字典的结构。</p>
+<p>在分类模型中，我们经常会遇到两类问题：</p>
+<p>第一种是误分类的代价很高。比如对合法用户和非法用户进行分类，将非法用户分类为合法用户的代价很高，我们宁愿将合法用户分类为非法用户，这时可以人工再甄别，但是却不愿将非法用户分类为合法用户。这时，我们可以适当提高非法用户的权重。</p>
+<p>第二种是样本是高度失衡的，比如我们有合法用户和非法用户的二元样本数据10000条，里面合法用户有9995条，非法用户只有5条，如果我们不考虑权重，则我们可以将所有的测试集都预测为合法用户，这样预测准确率理论上有99.95%，但是却没有任何意义。这时，我们可以选择balanced，让类库自动提高非法用户样本的权重。</p>
+</li>
+<li><p>solver：损失函数的优化方法{‘newton-cg’, ‘lbfgs’, ‘liblinear’, ‘sag’, ‘saga’},</p>
+<p>1）newton-cg:牛顿方法，利用损失函数二阶导数矩阵即海森矩阵来迭代优化损失函数。</p>
+<p>2）lbfgs：牛顿方法，利用损失函数二阶导数矩阵即海森矩阵来迭代优化损失函数。</p>
+<p>3）liblinear:使用了开源的liblinear库实现，内部使用了坐标轴下降法来迭代优化损失函数。</p>
+<p>4）sag：梯度下降法</p>
+<p>L1正则化是非连续的，而1、2、4都需要求导，所以只适用于L2，而liblinear适合于两者；<br>同时小数据时使用liblinear较好，大数据时使用sag较好。<br>多元逻辑回归包括一对多，多对多，liblinear只适用于一对多，但是多对多更精确一些。</p>
+</li>
+<li><p>multi_class：多分类，可以使用一对多（OvR）和多对多（MvM）</p>
+</li>
+</ul>
+<p>3、sklearn中进行交叉验证时，可以使用网格化来测试这些超参数，选择合适的超参数。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://yw411.github.io/2017/11/20/python初学爬虫/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1172,434 +1836,13 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://yw411.github.io/2017/11/17/next主题/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="高艺伟">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="高艺伟的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/11/17/next主题/" itemprop="url">github+hexo博客搭建----next主题</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-17T16:23:40+08:00">
-                2017-11-17
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/搭建博客/" itemprop="url" rel="index">
-                    <span itemprop="name">搭建博客</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>感觉每个主题都有许多可以进行修改的地方，配置文件，安装各种插件，修改源代码等等，值得去探索。</p>
-<ul>
-<li>_config.yml主题配置文件</li>
-<li>添加头像</li>
-<li>config文件:<ul>
-<li>avatar字段：可以是https链接或者images/avatar.jpg(或其他格式)图像</li>
-<li>menu栏：分类categories，标签tags，关于about等，比如hexo new page ‘categories’，在blog/source/categories中修改index.md文档。</li>
-<li>社交栏social link：微博、twitter、知乎等的添加</li>
-<li>友情链接栏blog rolls</li>
-<li>第三方平台添加评论、搜索、留言等</li>
-<li>音乐插件：网易云音乐生成外链，复制<code>`&lt;iframe&gt;` </code>中的内容，添加到layout/_macro/sidebar.swig中</li>
-</ul>
-</li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://yw411.github.io/2017/11/16/博客搭建/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="高艺伟">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="高艺伟的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/11/16/博客搭建/" itemprop="url">github+hexo博客搭建</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-16T20:41:58+08:00">
-                2017-11-16
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/搭建博客/" itemprop="url" rel="index">
-                    <span itemprop="name">搭建博客</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>一、所需工具<br>1、下载nodejs<br>2、下载git<br>二、安装<br>1、在github上创建repository：命名为username.github.io<br>2、安装hexo<br>    打开git命令端，进入某个目录<br>    1)npm install -g hexo-cli(这里可能出问题，墙的原因，可以试试这个<a href="http://npm.taobao.org/，即使用cnpm" target="_blank" rel="noopener">http://npm.taobao.org/，即使用cnpm</a>)<br>    2)hexo init blog<br>    3)cd blog<br>    4)(c)npm install<br>    5)hexo g<br>    6)hexo s(可以在本地打开localhost:4000查看网站)<br>3、hexo和github绑定<br>    1)安装插件(c)npm install hexo-deployer-git –save<br>    2)blog目录下有_config文件，打开进行修改：<br>        deploy:<br>          type: git<br>          repo: git@github.com:yourusername/yourusername.github.io.git<br>          branch: master<br>  3)hexo d<br>  致此，完成博客的搭建，可以通过username.github.io进行访问，当然也可以自己买域名修改域名<br>三、进一步完善<br>1、修改主题<br>    1)<a href="https://hexo.io/themes/这个网站有很多主题可供使用" target="_blank" rel="noopener">https://hexo.io/themes/这个网站有很多主题可供使用</a><br>    2)选择喜欢的主题进入github页面进行clone到本地 blog/themes文件夹下<br>    3)修个blog/_config配置文件，theme:(名称为下载的主题名)，可能有和主题相关的插件也需要下载<br>    4)hexo s –debug可以在本地进行预览，若可以则hexo g，hexo d到远程<br>2、配置主题<br>    有2个配置文件，blog下有一个配置文件，对应的主题下有一个配置文件<br>    1)blog下的配置文件可以设置blog的名称，描述等等<br>    2)对应主题下的配置文件可以设置关于主题的相关内容。<br>四、hexo相关命令<br>1、hexo new ‘a article’<br>新建一篇文档，然后去blog/source/posts下进行编辑<br>2、hexo s –debug<br>可以在本地进行debug，每次修改之后在localhost:4000/会看到更新<br>3、hexo g、hexo d<br>若更新满意，则要发布到远程仓库中，就使用这2个命令，然后username.github.io对应的网站就会进行更新。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://yw411.github.io/2017/11/16/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="高艺伟">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="高艺伟的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/11/16/hello-world/" itemprop="url">Hello World</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-16T10:10:19+08:00">
-                2017-11-16
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
 
 
           </div>
@@ -1647,7 +1890,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1658,7 +1901,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -1669,7 +1912,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

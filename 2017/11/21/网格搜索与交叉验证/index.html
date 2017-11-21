@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="windows," />
+  <meta name="keywords" content="sklearn,机器学习," />
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="参考:http://blog.csdn.net/samlei/article/details/5494624 在中文Windows系统中，如果一个文本文件是UTF-8编码的，那么在CMD.exe命令行窗口（所谓的DOS窗口）中不能正确显示文件中的内容。在默认情况下，命令行窗口中使用的代码页是中文或者美国的，即编码是中文">
-<meta name="keywords" content="windows">
+<meta name="description" content="0、参考： http://blog.csdn.net/JasonDing1354/article/details/50562522 http://www.cnblogs.com/nolonely/p/7007961.html 在参数中有一类是超参数，即不是通过训练得到的，而是由人工指定的，但是取哪个值需要不断的去尝试。">
+<meta name="keywords" content="sklearn,机器学习">
 <meta property="og:type" content="article">
-<meta property="og:title" content="非原创--dos切换代码页">
-<meta property="og:url" content="https://yw411.github.io/2017/11/20/dos切换代码页/index.html">
+<meta property="og:title" content="sklearn--网格搜索与交叉验证">
+<meta property="og:url" content="https://yw411.github.io/2017/11/21/网格搜索与交叉验证/index.html">
 <meta property="og:site_name" content="高艺伟的博客">
-<meta property="og:description" content="参考:http://blog.csdn.net/samlei/article/details/5494624 在中文Windows系统中，如果一个文本文件是UTF-8编码的，那么在CMD.exe命令行窗口（所谓的DOS窗口）中不能正确显示文件中的内容。在默认情况下，命令行窗口中使用的代码页是中文或者美国的，即编码是中文字符集或者西文字符集。  如果想正确显示UTF-8字符，可以按照以下步骤操作：">
+<meta property="og:description" content="0、参考： http://blog.csdn.net/JasonDing1354/article/details/50562522 http://www.cnblogs.com/nolonely/p/7007961.html 在参数中有一类是超参数，即不是通过训练得到的，而是由人工指定的，但是取哪个值需要不断的去尝试。 1、交叉验证 可以用来选择合适的超参数，对于每一个参数，进行n折交叉验证，得到">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-11-20T08:56:37.400Z">
+<meta property="og:updated_time" content="2017-11-21T03:18:15.460Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="非原创--dos切换代码页">
-<meta name="twitter:description" content="参考:http://blog.csdn.net/samlei/article/details/5494624 在中文Windows系统中，如果一个文本文件是UTF-8编码的，那么在CMD.exe命令行窗口（所谓的DOS窗口）中不能正确显示文件中的内容。在默认情况下，命令行窗口中使用的代码页是中文或者美国的，即编码是中文字符集或者西文字符集。  如果想正确显示UTF-8字符，可以按照以下步骤操作：">
+<meta name="twitter:title" content="sklearn--网格搜索与交叉验证">
+<meta name="twitter:description" content="0、参考： http://blog.csdn.net/JasonDing1354/article/details/50562522 http://www.cnblogs.com/nolonely/p/7007961.html 在参数中有一类是超参数，即不是通过训练得到的，而是由人工指定的，但是取哪个值需要不断的去尝试。 1、交叉验证 可以用来选择合适的超参数，对于每一个参数，进行n折交叉验证，得到">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="https://yw411.github.io/2017/11/20/dos切换代码页/"/>
+  <link rel="canonical" href="https://yw411.github.io/2017/11/21/网格搜索与交叉验证/"/>
 
 
 
 
 
-  <title>非原创--dos切换代码页 | 高艺伟的博客</title>
+  <title>sklearn--网格搜索与交叉验证 | 高艺伟的博客</title>
   
 
 
@@ -253,7 +253,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://yw411.github.io/2017/11/20/dos切换代码页/">
+    <link itemprop="mainEntityOfPage" href="https://yw411.github.io/2017/11/21/网格搜索与交叉验证/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="高艺伟">
@@ -270,7 +270,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">非原创--dos切换代码页</h1>
+          <h1 class="post-title" itemprop="name headline">sklearn--网格搜索与交叉验证</h1>
         
 
         <div class="post-meta">
@@ -282,8 +282,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-20T16:36:48+08:00">
-                2017-11-20
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-21T10:54:26+08:00">
+                2017-11-21
               </time>
             
 
@@ -305,8 +305,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/windows系统/" itemprop="url" rel="index">
-                    <span itemprop="name">windows系统</span>
+                  <a href="/categories/sklearn/" itemprop="url" rel="index">
+                    <span itemprop="name">sklearn</span>
                   </a>
                 </span>
 
@@ -342,26 +342,47 @@
       
 
       
-        <p>参考:<a href="http://blog.csdn.net/samlei/article/details/5494624" target="_blank" rel="noopener">http://blog.csdn.net/samlei/article/details/5494624</a></p>
-<p>在中文Windows系统中，如果一个文本文件是UTF-8编码的，那么在CMD.exe命令行窗口（所谓的DOS窗口）中不能正确显示文件中的内容。在默认情况下，命令行窗口中使用的代码页是中文或者美国的，即编码是中文字符集或者西文字符集。 </p>
-<p>如果想正确显示UTF-8字符，可以按照以下步骤操作： </p>
-<ol>
-<li><p>打开CMD.exe命令行窗口 </p>
-</li>
-<li><p>通过 chcp命令改变代码页，UTF-8的代码页为65001,命令为chcp 65001，执行该操作后，代码页就被变成UTF-8了。但是，在窗口中仍旧不能正确显示UTF-8字符。 </p>
-</li>
-<li><p>修改窗口属性，改变字体：在命令行标题栏上点击右键，选择”属性”-&gt;”字体”，将字体修改为True Type字体”Lucida Console”，然后点击确定将属性应用到当前窗口。<br>这时使用type命令就可以显示UTF-8文本文件的内容了： type filename.txt </p>
-</li>
-<li><p>通过以上操作并不能完全解决问题，因为显示出来的内容有可能不完全。可以先最小化，然后最大化命令行窗口，文件的内容就完整的显示出来了。</p>
-</li>
-</ol>
-<p>其他代码页参考：</p>
+        <p>0、参考：</p>
+<p><a href="http://blog.csdn.net/JasonDing1354/article/details/50562522" target="_blank" rel="noopener">http://blog.csdn.net/JasonDing1354/article/details/50562522</a></p>
+<p><a href="http://www.cnblogs.com/nolonely/p/7007961.html" target="_blank" rel="noopener">http://www.cnblogs.com/nolonely/p/7007961.html</a></p>
+<p>在参数中有一类是超参数，即不是通过训练得到的，而是由人工指定的，但是取哪个值需要不断的去尝试。</p>
+<p>1、交叉验证</p>
+<p>可以用来选择合适的超参数，对于每一个参数，进行n折交叉验证，得到n个结果然后进行平均，得到此超参数对应的结果。</p>
+<p>2、网格搜索交叉验证</p>
+<p>穷举所有可取的超参数，计算相应的结果。</p>
 <ul>
-<li><p>chcp 936      切换回简体中文，GBK编码</p>
+<li><p><code>sklearn.model_selection.GridSearchCV(model,param,cv,scoring)</code></p>
+<ul>
+<li>model是定义的模型，如model=sklearn.svm.SVC()</li>
+<li>param是要穷举的超参数，如param={‘C’:[0.1,1,10],’kernel’:[‘rbf’,’poly’,’linear’]}</li>
+<li>cv是交叉验证的次数</li>
+<li>scoring是评估指标，如accuracy，也可以是自己定义的评价指标</li>
+</ul>
 </li>
-<li><p>chcp 437     切换回英语，ISO8859编码</p>
+<li><p>有了train_x,train_y后</p>
+<p><code>grid=GridSearchCV()</code></p>
+<p><code>grid.fit(x,y)</code></p>
+</li>
+<li><p>grid中包括最后的结果</p>
+<ul>
+<li><p><code>grid.grid_scores_</code></p>
+</li>
+<li><p><code>grid.best_scores_    grid.best_params_    grid.best_estimator</code></p>
+</li>
+<li><p><code>print grid.grid_scores_[0].parameters</code></p>
+<p><code>print grid.grid_scores_[0].cv_validation_scores</code></p>
+<p><code>print grid.grid_scores_[0].mean_validation_score</code></p>
 </li>
 </ul>
+</li>
+</ul>
+<p>3、随机采样交叉验证</p>
+<p><code>RandomSearchCV(estimator, param_distributions, n_iter=10, scoring=None, fit_params=None, n_jobs=1, iid=True, refit=True, cv=None, verbose=0, pre_dispatch=&#39;2*n_jobs&#39;, random_state=None, error_score=&#39;raise&#39;, return_train_score=True)</code></p>
+<p>思想是不穷举所有的超参数，而是以一定的概率分布选择，速度更快</p>
+<p>1）estimator还是模型</p>
+<p>2）param_distributions是超参数</p>
+<p>3）n_iter指明多少个参数组合被计算</p>
+<p>4）cv指定交叉验证的次数</p>
 
       
     </div>
@@ -379,7 +400,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/windows/" rel="tag"># windows</a>
+            <a href="/tags/sklearn-机器学习/" rel="tag"># sklearn,机器学习</a>
           
         </div>
       
@@ -392,8 +413,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/11/20/摆弄路由器之感/" rel="next" title="摆弄路由器之感">
-                <i class="fa fa-chevron-left"></i> 摆弄路由器之感
+              <a href="/2017/11/21/sklearn-logisticRegression/" rel="next" title="sklearn--logisticRegression">
+                <i class="fa fa-chevron-left"></i> sklearn--logisticRegression
               </a>
             
           </div>
@@ -402,8 +423,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/11/20/图数据库neo4j安装/" rel="prev" title="图数据库neo4j安装">
-                图数据库neo4j安装 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/11/21/kaggle-泰坦尼克问题/" rel="prev" title="kaggle--泰坦尼克问题">
+                kaggle--泰坦尼克问题 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
