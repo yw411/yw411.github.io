@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="nlp," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="原文地址：情感分析简述　   作者：卿卿Antony   情感分析，我研究了也有半年有余了，ACL Anthology上关于情感分析的论文也基本看过了一遍，但是到目前还没有什么成就的。以下是我为一位同学毕业设计写的情感分析方面的综述，引用的论文基本上是ACL和COLING还有EMNLP上历年关于情感分析的论文，本文应该">
+<meta name="keywords" content="nlp">
+<meta property="og:type" content="article">
+<meta property="og:title" content="转载--情感分析简述">
+<meta property="og:url" content="https://yw411.github.io/2017/11/21/转载-情感分析简述/index.html">
+<meta property="og:site_name" content="高艺伟的博客">
+<meta property="og:description" content="原文地址：情感分析简述　   作者：卿卿Antony   情感分析，我研究了也有半年有余了，ACL Anthology上关于情感分析的论文也基本看过了一遍，但是到目前还没有什么成就的。以下是我为一位同学毕业设计写的情感分析方面的综述，引用的论文基本上是ACL和COLING还有EMNLP上历年关于情感分析的论文，本文应该学术性比较强一点，本文虽不打算发表，但由于将来可能还有用，以及关于学术上的原因，">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-11-21T07:57:07.454Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="转载--情感分析简述">
+<meta name="twitter:description" content="原文地址：情感分析简述　   作者：卿卿Antony   情感分析，我研究了也有半年有余了，ACL Anthology上关于情感分析的论文也基本看过了一遍，但是到目前还没有什么成就的。以下是我为一位同学毕业设计写的情感分析方面的综述，引用的论文基本上是ACL和COLING还有EMNLP上历年关于情感分析的论文，本文应该学术性比较强一点，本文虽不打算发表，但由于将来可能还有用，以及关于学术上的原因，">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.3',
+    sidebar: {"position":"right","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://yw411.github.io/2017/11/21/转载-情感分析简述/"/>
+
+
+
+
+
+  <title>转载--情感分析简述 | 高艺伟的博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">高艺伟的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://yw411.github.io/2017/11/21/转载-情感分析简述/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="高艺伟">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="高艺伟的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">转载--情感分析简述</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-21T15:37:19+08:00">
+                2017-11-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/自然语言处理/" itemprop="url" rel="index">
+                    <span itemprop="name">自然语言处理</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><strong>原文地址：</strong><a href="http://blog.sina.com.cn/s/blog_48f3f8b10100irhl.html" target="_blank" rel="noopener">情感分析简述</a>　   <strong>作者</strong>：卿卿Antony</p>
+<p>  情感分析，我研究了也有半年有余了，ACL Anthology上关于情感分析的论文也基本看过了一遍，但是到目前还没有什么成就的。以下是我为一位同学毕业设计写的情感分析方面的综述，引用的论文基本上是ACL和COLING还有EMNLP上历年关于情感分析的论文，本文应该学术性比较强一点，本文虽不打算发表，但由于将来可能还有用，以及关于学术上的原因，请大家如果要引用请务必标明出处（<a href="http://blog.sina.com.cn/s/blog_48f3f8b10100irhl.html）。" target="_blank" rel="noopener">http://blog.sina.com.cn/s/blog_48f3f8b10100irhl.html）。</a></p>
+<p><strong>概述</strong></p>
+<p>情感分析自从2002年由Bo Pang提出之后，获得了很大程度的研究的，特别是在在线评论的情感倾向性分析上获得了很大的发展，目前基于在线评论文本的情感倾向性分析的准确率最高能达到90%以上，但是由于深层情感分析必然涉及到语义的分析，以及文本中情感转移现象的经常出现，所以基于深层语义的情感分析以及篇章级的情感分析进展一直不是很大。情感分析还存在的一个问题是尚未存在一个标准的情感测试语料库，虽然Bo Pang实验用的电影评论数据集（<a href="http://www.cs.cornell.edu/people/pabo/movie-review-data/）以及Theresa" target="_blank" rel="noopener">http://www.cs.cornell.edu/people/pabo/movie-review-data/）以及Theresa</a> Wilson等建立的MPQA（<a href="http://www.cs.pitt.edu/mpqa/）是目前广泛使用的两类情感分析数据集，但是并没有公认的标准加以确认。" target="_blank" rel="noopener">http://www.cs.pitt.edu/mpqa/）是目前广泛使用的两类情感分析数据集，但是并没有公认的标准加以确认。</a></p>
+<p>目前情感分析的研究基本借鉴文本分类等机器学习的方法，还没有根据自身的特点形成一套独立的研究方法，当然在某种程度上也可以把情感分析看出一种特殊的文本分类。比较成熟的方法是基于监督学习的机器学习方法，半监督学习和无监督学习目前的研究不是很多，单纯的基于规则的情感分析这两年已很少研究了。既然目前很多情感分析的研究基于机器学习，那么特征选择就是一个很重要的问题，N元语法等句法特征是使用最多的一类特征，而语义特征（语义计算）和结构特征（树核函数）从文本分类的角度看效果远没有句法特征效果好，所以目前的研究不是很多的。</p>
+<p>由于基于监督学习情感分析的研究已经很成熟了，而且在真实世界中由于测试集的数量要远远多于训练集的数量，并且测试集的领域也不像在监督学习中被限制为和训练集一致，也就是说目前情感分析所应用的归纳偏置假设在真实世界中显得太强的，为了和真实世界相一致，基于半监督学习或弱指导学习的情感分析和跨领域的情感分析势必是将来的研究趋势之一。</p>
+<p>在情感分析的最初阶段基于语义和基于规则的情感分析曾获得了比较大的重视，但是由于本身实现的复杂性以及文本分类和机器学习方法在情感分析应用上获得的成功，目前关于这方面的研究以及很少了，但是事实上，语义的相关性和上下文的相关性正是情感分析和文本分类最大的不同之处，所以将基于语义和规则的情感分析与基于机器学习的情感分析相结合也将是未来的研究趋势之一。</p>
+<p>以下将分别对情感分析的起源，目前基于监督学习，无监督学习，基于规则和跨领域的情感分析的一些研究工作进行简单的介绍。</p>
+<p><strong>起源</strong></p>
+<p>虽然之前也有一些相关工作，但目前公认的情感分析比较系统的研究工作开始于（Pang et al., 2002）基于监督学习（supervised learning）方法对电影评论文本进行情感倾向性分类和（Turney,2002）基于无监督学习（unsupervised learning）对文本情感情感倾向性分类的研究。（Pang et al., 2002）基于文本的N元语法（ngram）和词类（POS）等特征分别使用朴素贝叶斯（Naive Bayes），最大熵（Maximum Entropy）和支持向量机（Support Vector Machine，SVM）将文本情感倾向性分为正向和负向两类，将文本的情感进行二元划分的做法也一直沿用至今。同时他们在实验中使用电影评论数据集目前已成为广泛使用的情感分析的测试集。（Turney ,2002）基于点互信息（Pointwise Mutual Information，PMI）计算文本中抽取的关键词和种子词（excellent,poor）的相似度来对文本的情感倾向性进行判别（SO-PMI算法）。</p>
+<p>在此之后的大部分都是基于（Pang et al., 2002）的研究。而相对来说，（Turney et al.,2002）提出的无监督学习的方法虽然在实现上更加简单，但是由于单词之间的情感相似度难以准确的计算和种子词的难以确定，继续在无监督学习方向的研究并不是很多的，但是利用SO-PMI算法计算文本情感倾向性的思想却被很多研究者所继承了。</p>
+<p><strong>监督学习</strong></p>
+<p>目前，基于监督学习的情感分析仍然是主流，除了（Li et al.,2009）基于非负矩阵三分解（Non-negative Matrix Tri-factorization），（Abbasi et al.,2008）基于遗传算法（Genetic Algorithm）的情感分析之外，使用的最多的监督学习算法是朴素贝叶斯，k最近邻（k-Nearest Neighbor，k-NN），最大熵和支持向量机的。而对于算法的改进主要在对文本的预处理阶段。</p>
+<p>一个和文本分类不同地方就是情感分析有时需要提取文本的真正表达情感的句子。（Pang et al., 2004）基于文本中的主观句的选择和（Wilson el al.,2009）基于文本中的中性实例（neutral instances）的分析，都是为了能够尽量获得文本中真正表达情感的句子。（Abbasi et al.,2008）提出通过信息增益（Information Gain，IG）的方法来选择大量特征集中对于情感分析有益的特征。</p>
+<p>而对于特征选择，除了N元语法和词类特征之外，（Wilson el al.,2009）提出混合单词特征，否定词特征，情感修饰特征，情感转移特征等各类句法特征的情感分析，（Abbasi et al.,2008）提出混合句子的句法（N元语法，词类，标点）和结构特征（单词的长度，词类中单词的个数，文本的结构特征等）的情感分析。</p>
+<p>除了对于文本的预处理，对于监督学习中情感分析还进行了以下方面的研究的。（Melville et al., 2009）和（Li et al.,2009）提出结合情感词的先验的基于词典的情感倾向性和训练文本中后验的基于上下文的情感情感倾向性共同判断文本的情感倾向性。（Taboada et al.,2009）提出结合文本的题材（描述，评论，背景，解释等）和文本本身的特征共同判断文本的情感倾向性。（Tsutsumi et al.,2007）提出利用多分类器融合技术来对文本情感分类。（Wan, 2008）和（Wan, 2009）提出结合英文中丰富的情感分析资源来提高中文情感分析的效果。</p>
+<p><strong>基于规则/无监督学习</strong></p>
+<p>和基于监督学习的情感分析相比，基于规则和无监督学习方面的研究不是很多。除了（Turney,2002）之外，（朱嫣岚 et al.,2002）利用HowNet对中文词语语义的进行了情感倾向计算。（娄德成 et al.,2006）利用句法结构和依存关系对中文句子语义进行了情感分析，（Hiroshi et al.,2004）通过改造一个基于规则的机器翻译器实现日文短语级情感分析，（Zagibalov et al.,2008）在（Turney,2002）的SO-PMI算法的基础上通过对于中文文本特征的深入分析以及引入迭代机制从而在很大程度上提高了无监督学习情感分析的准确率。</p>
+<p><strong>跨领域情感分析</strong></p>
+<p>跨领域情感分析在情感分析中是一个新兴的领域，目前在这方面的研究不是很多，主要原因是目前的研究还没有很好的解决如何寻找两个领域之间的一种映射关系，或者说如何寻找两个领域之间特征权值之间的平衡关系。对于跨领域情感分析的研究开始于（Blitzer et al.,2007）将结构对应学习（Structural Correspondence Learning，SCL）引入跨领域情感分析，SCL是一种应用范围很广的跨领域文本分析算法，SCL的目的是将训练集上的特征尽量对应到测试集中。（Tan et al.,2009）将SCL引入了中文跨领域情感分析中。（Tan2 et al.,2009）提出将朴素贝叶斯和EM算法的一种半监督学习方法应用到了跨领域的情感分析中。（Wu et al.,2009）将基于EM的思想将图排序（Graph Ranking）算法应用到跨领域的情感分析中，图排序算法可以认为是一种迭代的k-NN算法。</p>
+<p>从目前的研究可以看出，跨领域的情感分析主要问题在于寻找两个领域之间的一种映射关系，但是这样的映射关系或者很难寻找，或者需要相当强的数学证明。所以很多研究借用半监督学习的方法，通过逐次迭代逐渐减少训练集和测试集之间的差异。</p>
+<p><strong>参考文献：</strong></p>
+<p>[1]Xiaojun Wan.Using Bilingual Knowledge and Ensemble Techniques for Unsupervised Chinese Sentiment Analysis.Proceedings of EMNLP-08,553-561</p>
+<p>[2]Xiaoun Wan.Co-Training for Cross-Lingual Sentiment Classification.Proceedings of ACL-09,234-243</p>
+<p>[3]Theresa Wilson,Janyce Wiebe,Paul Hoffmann. Recognizing Contextual Polarity: An Exploration of Features for Phrase-Level. Computer Linguistics,25(3),399-433</p>
+<p>[4]Ahmed Abbasi,Hsinchun Chen,Arab,Salem.Sentiment Analysis in Multiple Languages:Feature Selection for Opinion Classification in Web Forums.ACM Transaction on Information Systems,26(3),12:1-12:34</p>
+<p>[5]Prem Melville,Wojciech Gryc,Richard D.Larence.Sentiment Analysis Of Blogs by Combining Lexical Knowledge with Text Classification.Proceedings of KDD-09,1275-1283</p>
+<p>[6]KANAYAMA Hiroshi,NASUKAWA Tetsuya,WATANBE Hideo.Deep Sentiment Analysis Using Machine Translation Technology.Proceedings of Coling -04</p>
+<p>[7]Maite Taboada,Julian Brooke,Manfred Stede.Genre-Based Paragraph Classification for Sentiment Analysis.Proceedings of SIGDIAL-09,62-70</p>
+<p>[9]Taras Zagibalov,John Carroll.Automatic Seed Word Selection for Unsupervised Sentiment Classification of Chinese Text.Proceedings of Coling-08,1073-1080</p>
+<p>[10]Bo Pang,Lillian Lee.A Sentimental Education:Sentiment Analysis Using Subjectivity Summarization Based on Minimum Cuts.Proceedings of ACL-04</p>
+<p>[11]Bo Pang,Lillian Lee,Shivakumar Vaithyanathan.Thumbs up?Sentiment Classification using Machine Learning Techniques.Proceedings of EMNLP-02,79-86</p>
+<p>[12]Peter D. Turney.Thumbs Up or Thumbs Down?Senmantic Orientition Applied to Unsupervised Classification of Reviews.Proceedings of ACL-02,417-424</p>
+<p>[13]Kimitaka Tsutsumi, Kazutaka Shimada,Tsutomu Endo. Movie Review Classification Based on a Multiple Classifier. Proceedings of the 21st Pacific Asia Conference on Language, Information and Computation (PACLIC21), 481-488</p>
+<p>[14]John Blitzer,Mark Dredze, Fernando Pereira. Biographies, Bollywood, Boom-boxes and Blenders:Domain Adaptation for Sentiment Classification. Proceedings of the 45th Annual Meeting of the Association of Computational Linguistics, 440–447</p>
+<p>[15]Songbo Tan,Xueqi Cheng. Improving SCL Model for Sentiment-Transfer Learning. Proceedings of NAACL HLT 2009: Short Papers, 181–184</p>
+<p>[16]Songbo Tan, Xueqi Cheng, Yuefen Wang, Hongbo Xu. Adapting Naive Bayes to Domain Adaptation for Sentiment Analysis. ECIR 2009,337–349</p>
+<p>[17]Qiong Wu,Songbo Tan,Xueqi Cheng. Graph Ranking for Sentiment Transfer. Proceedings of the ACL-IJCNLP 2009 Conference Short Papers, 317–320</p>
+<p>[18]Tao Li Ti Zhang,Vikas Sindhwani.A Non-negative Matrix Tri-factorization Approach to Sentiment Classification with Lexical Prior Knowledge.Proceeding of ACL-09,244-252</p>
+<p>[19]娄德成,姚天妨.汉语与子语义极性分析和观点抽取方法的研究.计算机应用,2006,26(11),2622-2625</p>
+<p>[20]朱嫣岚,闵锦,周雅倩,黄萱菁,吴立德. 基于HowNet的词汇语义倾向计算. 中文信息学　报,2006,20(1),14-20</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/nlp/" rel="tag"># nlp</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/11/21/localhost无法打开/" rel="next" title="localhost无法打开">
+                <i class="fa fa-chevron-left"></i> localhost无法打开
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="高艺伟" />
+            
+              <p class="site-author-name" itemprop="name">高艺伟</p>
+              <p class="site-description motion-element" itemprop="description">程序媛、历史、美剧</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          <div class="links-of-author motion-element">
+            
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/yw411" target="_blank" title="GitHub">
+                    
+                      <i class="fa fa-fw fa-globe"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://weibo.com/u/3156604591" target="_blank" title="微博">
+                    
+                      <i class="fa fa-fw fa-globe"></i>微博</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://www.douban.com/people/123007817/" target="_blank" title="豆瓣">
+                    
+                      <i class="fa fa-fw fa-globe"></i>豆瓣</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://www.zhihu.com/people/gao-yi-wei-56/" target="_blank" title="知乎">
+                    
+                      <i class="fa fa-fw fa-globe"></i>知乎</a>
+                </span>
+              
+            
+          </div>
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                友情链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://live-high.github.io/" title="叶子" target="_blank">叶子</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://ehlxr.me/picture/" title="ehlxr" target="_blank">ehlxr</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.iamlj.com/" title="iamlj" target="_blank">iamlj</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://theme-next.iissnan.com/" title="next文档" target="_blank">next文档</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://leeyom.top/" title="leeyom" target="_blank">leeyom</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+          <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 
+              src="//music.163.com/outchain/player?type=2&id=5253687&auto=0&height=66">
+          </iframe>					 
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">高艺伟</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.3</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.3"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
